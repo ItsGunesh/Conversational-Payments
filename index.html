@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversational Payments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h1>Conversational Payments</h1>
+            <p>Welcome to my conversational website where you can interact using voice commands.</p>
+            <p>Format: <b>"send [amount] to [person]"</b></p>
+            <p>We use Razorpay as our payment gateway.</p>
+            <div class="razor">
+                <img src="razorpay.png" alt="Razorpay" class="razorpay">
+                <p>Powered by Razorpay</p>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="chatbox">
+                <div class="messages" id="messages"></div>
+                <div class="input-area">
+                    <input type="text" id="chatInput" placeholder="Say something...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="pin-overlay" id="pinOverlay">
+        <div class="pin-container">
+            <h2>Enter Your PIN</h2>
+            <input type="password" id="pinInput" maxlength="4" placeholder="Enter PIN" readonly>
+            <div class="numpad">
+                <button onclick="enterPin(1)">1</button>
+                <button onclick="enterPin(2)">2</button>
+                <button onclick="enterPin(3)">3</button>
+                <button onclick="enterPin(4)">4</button>
+                <button onclick="enterPin(5)">5</button>
+                <button onclick="enterPin(6)">6</button>
+                <button onclick="enterPin(7)">7</button>
+                <button onclick="enterPin(8)">8</button>
+                <button onclick="enterPin(9)">9</button>
+                <button onclick="clearPin()">Clear</button>
+                <button onclick="enterPin(0)">0</button>
+            </div>
+            <button class="submit-btn" onclick="verifyPin()">Submit</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
